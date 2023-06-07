@@ -1,10 +1,19 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 import { COLORS, SIZES } from "../../constants/theme";
+import AnnouncementBtn from "../common/btns/AnnouncementBtn";
+import { announcements } from "../../data/announcementData";
 
 const Announcements = () => {
     return (
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
+        <View
+            style={{
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: 45,
+                width: "100%",
+            }}
+        >
             <Text
                 style={{
                     fontFamily: "NunitoBold",
@@ -23,6 +32,17 @@ const Announcements = () => {
                     margin: 10,
                 }}
             ></View>
+            <View
+                style={{
+                    width: "100%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
+                {announcements.map((announcement, index) => (
+                    <AnnouncementBtn key={index} announcement={announcement} />
+                ))}
+            </View>
         </View>
     );
 };

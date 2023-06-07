@@ -28,7 +28,7 @@ const Home = () => {
                 }}
             />
 
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View
                     style={{
                         flex: 1,
@@ -77,7 +77,9 @@ const Home = () => {
                         </ImageBackground>
                     </View>
                 </View>
-                <Announcements />
+                <View style={{ flex: 1, padding: SIZES.small }}>
+                    <Announcements />
+                </View>
             </ScrollView>
         </View>
     );
