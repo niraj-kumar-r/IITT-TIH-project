@@ -38,18 +38,17 @@ const Layout = () => {
                 options={{
                     drawerLabel: "Home",
                     title: "Home",
-
                     ...headerOptions,
                 }}
             />
-            {/* <Drawer.Screen
-                name="about/aboutUs"
+            <Drawer.Screen
+                name="about/index"
                 options={{
                     drawerLabel: "About Us",
                     title: "About Us",
                     ...headerOptions,
                 }}
-            /> */}
+            />
             <Drawer.Screen
                 name="client/login"
                 options={{

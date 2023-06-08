@@ -1,8 +1,29 @@
-import React from "react";
-import { Text } from "react-native";
+import React, { useState } from "react";
+import { Login } from "../../components/login/Login";
+import { View } from "react-native";
 
 const StudentLogin = () => {
-    return <Text>Student Login</Text>;
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = () => {};
+    return (
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+        >
+            <Login
+                username={username}
+                password={password}
+                setUsername={setUsername}
+                setPassword={setPassword}
+                onSubmit={handleSubmit}
+            />
+        </View>
+    );
 };
 
 export default StudentLogin;
