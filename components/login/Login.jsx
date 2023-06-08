@@ -25,13 +25,34 @@ const Login = ({
         >
             <View>
                 <Text style={{ fontFamily: "NunitoBold" }}>Username</Text>
-                <View>
-                    <UsernameIcon />
+                <View
+                    style={{
+                        borderWidth: 0.5,
+                        borderRadius: SIZES.medium / 2,
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                >
+                    <View
+                        style={{
+                            justifyContent: "center",
+                            alignItems: "center",
+                            // backgroundColor: "green",
+                            marginLeft: SIZES.xSmall,
+                        }}
+                    >
+                        <UsernameIcon
+                            width={SIZES.medium}
+                            height={SIZES.medium}
+                            color="black"
+                        />
+                    </View>
                     <TextInput
                         style={{
-                            borderWidth: 0.5,
-                            borderRadius: SIZES.medium / 2,
-                            paddingLeft: SIZES.xxLarge,
+                            // backgroundColor: "pink",
+                            width: "90%",
+                            marginHorizontal: SIZES.xSmall,
                         }}
                     />
                 </View>
