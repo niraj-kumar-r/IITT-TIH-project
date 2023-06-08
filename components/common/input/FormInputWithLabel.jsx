@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TextInput } from "react-native";
-import { SIZES } from "../../../constants/theme";
+import { COLORS, SIZES } from "../../../constants/theme";
 
 const FormInputWithLabel = ({
     label,
@@ -10,10 +10,17 @@ const FormInputWithLabel = ({
     icon,
     inputOptions,
     inputWidth,
+    showAsterisk = false,
 }) => {
     return (
-        <View style={{ gap: SIZES.xSmall / 1.5 }}>
-            <Text style={{ fontFamily: "NunitoBold" }}>{label}</Text>
+        <View style={{ gap: SIZES.xSmall / 1.5, width: inputWidth }}>
+            <Text style={{ fontFamily: "NunitoBold" }}>
+                {label}
+                {showAsterisk ? (
+                    <Text style={{ color: COLORS.tertiary }}>*</Text>
+                ) : null}
+            </Text>
+
             <View
                 style={{
                     borderWidth: 0.5,
@@ -39,7 +46,7 @@ const FormInputWithLabel = ({
                     placeholder={placeholder ?? ""}
                     onChangeText={(text) => setValue(text)}
                     style={{
-                        width: inputWidth ?? icon !== undefined ? "85%" : "93%",
+                        width: icon !== undefined ? "85%" : "93%",
                         marginHorizontal: SIZES.xSmall,
                     }}
                     {...inputOptions}
