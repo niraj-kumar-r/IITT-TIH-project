@@ -2,8 +2,6 @@ import "react-native-gesture-handler";
 import { View, Text, ScrollView, Image, ImageBackground } from "react-native";
 
 import { COLORS, SIZES } from "../constants/theme";
-import { Drawer } from "expo-router/drawer";
-import ScreenHeaderBtn from "../components/common/header/ScreenHeaderBtn";
 import Announcements from "../components/home/Announcements";
 import logo from "../assets/images/iittnifLogo.png";
 import imageBg from "../assets/images/satelliteBg.jpeg";
@@ -11,14 +9,6 @@ import imageBg from "../assets/images/satelliteBg.jpeg";
 const Home = () => {
     return (
         <View style={{ flex: 1, backgroundColor: COLORS.pureWhite }}>
-            <Drawer.Screen
-                options={{
-                    drawerLabel: "Home",
-                    headerTitle: "Home",
-                    headerTitleAlign: "center",
-                }}
-            />
-
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View
                     style={{
@@ -30,7 +20,7 @@ const Home = () => {
                     <View
                         style={{
                             width: "100%",
-                            height: 150,
+                            height: 130,
                             justifyContent: "center",
                             alignItems: "center",
                         }}
