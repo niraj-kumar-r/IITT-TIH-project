@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Login from "../../components/login/Login";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
 const StudentLogin = () => {
     const [username, setUsername] = useState("");
@@ -20,7 +20,7 @@ const StudentLogin = () => {
                 password={password}
                 setUsername={setUsername}
                 setPassword={setPassword}
-                signUpPath="/student/signup"
+                signUpPath="student/signup"
                 onSubmit={handleSubmit}
             />
         </View>
