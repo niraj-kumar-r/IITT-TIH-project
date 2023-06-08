@@ -153,7 +153,7 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                     >
                         <Picker
                             selectedValue={formState?.coreArea}
-                            onValueChange={(itemValue, itemIndex) =>
+                            onValueChange={(itemValue) =>
                                 handleFormChange("coreArea", itemValue)
                             }
                             prompt="Core Area"
@@ -189,7 +189,7 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                     >
                         <Picker
                             selectedValue={formState?.coreArea}
-                            onValueChange={(itemValue, itemIndex) =>
+                            onValueChange={(itemValue) =>
                                 handleFormChange("coreArea", itemValue)
                             }
                             prompt="Applied Area"
