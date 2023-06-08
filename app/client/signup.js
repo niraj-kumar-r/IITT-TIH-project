@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { ScrollView } from "react-native";
 import React, { useState } from "react";
 import ClientSignup from "../../components/signup/ClientSignup";
 import { COLORS } from "../../constants/theme";
@@ -6,16 +6,15 @@ import { COLORS } from "../../constants/theme";
 const Signup = () => {
     const [formState, setFormState] = useState({});
     return (
-        <View
+        <ScrollView
+            showsVerticalScrollIndicator={false}
             style={{
                 flex: 1,
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: COLORS.lightWhite,
+                backgroundColor: COLORS.pureWhite,
             }}
         >
             <ClientSignup formState={formState} setFormState={setFormState} />
-        </View>
+        </ScrollView>
     );
 };
 
