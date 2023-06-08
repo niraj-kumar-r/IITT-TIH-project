@@ -48,6 +48,7 @@ const FormInputWithLabel = ({
                     style={{
                         width: icon !== undefined ? "85%" : "93%",
                         marginHorizontal: SIZES.xSmall,
+                        paddingVertical: SIZES.xSmall / 2,
                     }}
                     {...inputOptions}
                 />

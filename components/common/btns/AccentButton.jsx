@@ -2,7 +2,14 @@ import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 import { COLORS, SIZES } from "../../../constants/theme";
 
-const AccentButton = ({ label, onSubmit, accentColor, textColor, width }) => {
+const AccentButton = ({
+    label,
+    onSubmit,
+    accentColor,
+    textColor,
+    width,
+    textStyle,
+}) => {
     return (
         <TouchableOpacity onPress={onSubmit}>
             <Text
@@ -15,6 +22,7 @@ const AccentButton = ({ label, onSubmit, accentColor, textColor, width }) => {
                     marginVertical: SIZES.large,
                     borderRadius: SIZES.medium / 2,
                     fontFamily: "NunitoSemiBold",
+                    ...textStyle,
                 }}
             >
                 {label}

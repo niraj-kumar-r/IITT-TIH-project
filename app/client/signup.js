@@ -1,10 +1,11 @@
 import { ScrollView } from "react-native";
 import React, { useState } from "react";
 import ClientSignup from "../../components/signup/ClientSignup";
-import { COLORS } from "../../constants/theme";
+import { COLORS, SIZES } from "../../constants/theme";
 
 const Signup = () => {
     const [formState, setFormState] = useState({});
+    const onSubmit = () => {};
     return (
         <ScrollView
             showsVerticalScrollIndicator={false}
@@ -13,7 +14,11 @@ const Signup = () => {
                 backgroundColor: COLORS.pureWhite,
             }}
         >
-            <ClientSignup formState={formState} setFormState={setFormState} />
+            <ClientSignup
+                formState={formState}
+                setFormState={setFormState}
+                onSubmit={onSubmit}
+            />
         </ScrollView>
     );
 };
