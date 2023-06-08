@@ -21,9 +21,10 @@ const Login = ({
                 padding: SIZES.large,
                 width: "90%",
                 borderRadius: SIZES.medium / 2,
+                gap: SIZES.small,
             }}
         >
-            <View>
+            <View style={{ gap: SIZES.xSmall / 1.5 }}>
                 <Text style={{ fontFamily: "NunitoBold" }}>Username</Text>
                 <View
                     style={{
@@ -60,7 +61,7 @@ const Login = ({
                     />
                 </View>
             </View>
-            <View>
+            <View style={{ gap: SIZES.xSmall / 1.5 }}>
                 <Text style={{ fontFamily: "NunitoBold" }}>Password</Text>
                 <View
                     style={{
@@ -112,10 +113,24 @@ const Login = ({
                     Login
                 </Text>
             </TouchableOpacity>
-            <View>
+            <View
+                style={{
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: SIZES.xSmall,
+                }}
+            >
                 <Text>Don't have an account?</Text>
                 <TouchableOpacity onPress={() => router.push(signUpPath)}>
-                    <Text>Register</Text>
+                    <Text
+                        style={{
+                            color: COLORS.secondary,
+                            fontFamily: "NunitoSemiBold",
+                        }}
+                    >
+                        Register
+                    </Text>
                 </TouchableOpacity>
             </View>
         </View>
