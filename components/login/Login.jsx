@@ -1,7 +1,9 @@
 import React from "react";
 import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
+
 import { COLORS, SIZES } from "../../constants/theme";
+import AccentButton from "../common/btns/AccentButton";
 import UsernameIcon from "../../assets/icons/username.svg";
 import PasswordIcon from "../../assets/icons/password.svg";
 
@@ -98,21 +100,7 @@ const Login = ({
                     />
                 </View>
             </View>
-            <TouchableOpacity onPress={onSubmit}>
-                <Text
-                    style={{
-                        textAlign: "center",
-                        padding: SIZES.xSmall,
-                        backgroundColor: COLORS.tertiary,
-                        color: COLORS.pureWhite,
-                        marginVertical: SIZES.large,
-                        borderRadius: SIZES.medium / 2,
-                        fontFamily: "NunitoSemiBold",
-                    }}
-                >
-                    Login
-                </Text>
-            </TouchableOpacity>
+            <AccentButton label="Login" onSubmit={onSubmit} />
             <View
                 style={{
                     flexDirection: "row",

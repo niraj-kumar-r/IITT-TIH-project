@@ -1,12 +1,19 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { useRouter } from "expo-router";
+import StudentSignup from "../../components/signup/StudentSignup";
+import { COLORS } from "../../constants/theme";
 
 const Signup = () => {
-    const router = useRouter();
     return (
-        <View>
-            <Text>Signup student</Text>
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: COLORS.lightWhite,
+            }}
+        >
+            <StudentSignup />
         </View>
     );
 };
