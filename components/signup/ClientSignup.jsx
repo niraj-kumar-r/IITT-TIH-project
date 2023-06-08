@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { Picker } from "@react-native-picker/picker";
 
 import FormInputWithLabel from "../common/input/FormInputWithLabel";
 import FormPickerInput from "../common/input/FormPickerInput";
