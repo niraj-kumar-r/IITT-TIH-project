@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
 import FormInputWithLabel from "../common/input/FormInputWithLabel";
+import FormPickerInput from "../common/input/FormPickerInput";
 import AccentButton from "../common/btns/AccentButton";
 import { COLORS, SIZES } from "../../constants/theme";
 
@@ -132,78 +133,20 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                 >
                     Subject Field
                 </Text>
-                <View
-                    style={{
-                        gap: SIZES.xSmall / 1.5,
-                        width: "100%",
-                        alignItems: "center",
-                    }}
-                >
-                    <Text style={{ fontFamily: "NunitoBold", width: "90%" }}>
-                        Core Area
-                        <Text style={{ color: COLORS.tertiary }}>*</Text>
-                    </Text>
-                    <View
-                        style={{
-                            borderWidth: 0.5,
-                            borderRadius: SIZES.medium / 2,
-                            width: "90%",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <Picker
-                            selectedValue={formState?.coreArea}
-                            onValueChange={(itemValue) =>
-                                handleFormChange("coreArea", itemValue)
-                            }
-                            prompt="Core Area"
-                        >
-                            {coreAreaList.map((area, index) => (
-                                <Picker.Item
-                                    value={area}
-                                    key={index}
-                                    label={area}
-                                />
-                            ))}
-                        </Picker>
-                    </View>
-                </View>
-                <View
-                    style={{
-                        gap: SIZES.xSmall / 1.5,
-                        width: "100%",
-                        alignItems: "center",
-                    }}
-                >
-                    <Text style={{ fontFamily: "NunitoBold", width: "90%" }}>
-                        Applied Area
-                        <Text style={{ color: COLORS.tertiary }}>*</Text>
-                    </Text>
-                    <View
-                        style={{
-                            borderWidth: 0.5,
-                            borderRadius: SIZES.medium / 2,
-                            width: "90%",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <Picker
-                            selectedValue={formState?.coreArea}
-                            onValueChange={(itemValue) =>
-                                handleFormChange("coreArea", itemValue)
-                            }
-                            prompt="Applied Area"
-                        >
-                            {appliedAreaList.map((area, index) => (
-                                <Picker.Item
-                                    value={area}
-                                    key={index}
-                                    label={area}
-                                />
-                            ))}
-                        </Picker>
-                    </View>
-                </View>
+                <FormPickerInput
+                    label="Core Area"
+                    optionsList={coreAreaList}
+                    value={formState?.coreArea}
+                    setValue={(value) => handleFormChange("coreArea", value)}
+                    showAsterisk={true}
+                />
+                <FormPickerInput
+                    label="Applied Area"
+                    optionsList={appliedAreaList}
+                    value={formState?.appliedArea}
+                    setValue={(value) => handleFormChange("appliedArea", value)}
+                    showAsterisk={true}
+                />
             </View>
 
             <View
