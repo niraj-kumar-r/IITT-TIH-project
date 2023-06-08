@@ -2,6 +2,9 @@ import { Stack } from "expo-router";
 import { useCallback } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { Drawer } from "expo-router/drawer";
+import menuIcon from "../assets/icons/menu.png";
+import { COLORS, SIZES } from "../constants/theme";
 
 const Layout = () => {
     const [fontsLoaded] = useFonts({
@@ -21,7 +24,22 @@ const Layout = () => {
         return null;
     }
 
-    return <Stack onLayout={onLayoutRootView} />;
+    return (
+        <Drawer
+            onLayout={onLayoutRootView}
+            options={{
+                headerTitleAlign: "center",
+                headerTitleStyle: {
+                    fontFamily: "NunitoBold",
+                    fontSize: 20,
+                },
+                headerStyle: { backgroundColor: COLORS.pureWhite },
+                headerLeft: () => (
+                    <ScreenHeaderBtn iconUrl={menuIcon} dimension="60%" />
+                ),
+            }}
+        />
+    );
 };
 
 export default Layout;

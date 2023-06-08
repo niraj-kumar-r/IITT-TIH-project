@@ -1,30 +1,21 @@
+import "react-native-gesture-handler";
 import { View, Text, ScrollView, Image, ImageBackground } from "react-native";
-// import { SafeAreaView } from "react-native-safe-area-context";
 
 import { COLORS, SIZES } from "../constants/theme";
-import { Stack } from "expo-router";
+import { Drawer } from "expo-router/drawer";
 import ScreenHeaderBtn from "../components/common/header/ScreenHeaderBtn";
 import Announcements from "../components/home/Announcements";
-import menuIcon from "../assets/icons/menu.png";
 import logo from "../assets/images/iittnifLogo.png";
 import imageBg from "../assets/images/satelliteBg.jpeg";
 
 const Home = () => {
     return (
         <View style={{ flex: 1, backgroundColor: COLORS.pureWhite }}>
-            <Stack.Screen
+            <Drawer.Screen
                 options={{
+                    drawerLabel: "Home",
                     headerTitle: "Home",
                     headerTitleAlign: "center",
-                    headerTitleStyle: {
-                        fontFamily: "NunitoBold",
-                        fontSize: 20,
-                    },
-                    headerStyle: { backgroundColor: COLORS.pureWhite },
-                    // headerShadowVisible: false,
-                    headerLeft: () => (
-                        <ScreenHeaderBtn iconUrl={menuIcon} dimension="60%" />
-                    ),
                 }}
             />
 
