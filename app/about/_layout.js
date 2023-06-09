@@ -1,7 +1,3 @@
-import { Stack } from "expo-router";
+import { Drawer } from "expo-router/drawer";
 
-const Layout = () => {
-    <Stack />;
-};
-
-export default Layout;
+export default Drawer;

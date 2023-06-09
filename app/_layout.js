@@ -34,27 +34,31 @@ const Layout = () => {
                     ...headerOptions,
                 }}
             />
-            {/* <Drawer.Screen
-                name="/about/index"
+            <Drawer.Screen
+                name="about"
                 options={{
                     drawerLabel: "About Us",
                     title: "About Us",
-                    ...headerOptions,
-                }}
-            /> */}
-            <Drawer.Screen
-                name="client/login"
-                options={{
-                    drawerLabel: "Client Login",
-                    title: "Client Login",
+                    headerShown: false,
                     ...headerOptions,
                 }}
             />
             <Drawer.Screen
-                name="student/login"
+                name="client"
+                options={{
+                    drawerLabel: "Client Login",
+                    title: "Client Login",
+                    headerShown: false,
+
+                    ...headerOptions,
+                }}
+            />
+            <Drawer.Screen
+                name="student"
                 options={{
                     drawerLabel: "Student Login",
                     title: "Student Login",
+                    headerShown: false,
                     ...headerOptions,
                 }}
             />

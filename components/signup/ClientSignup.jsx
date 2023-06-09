@@ -51,7 +51,7 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                         width: "90%",
                         textAlign: "left",
                         marginBottom: 20,
-                        marginTop: 10,
+                        marginTop: 20,
                     }}
                 >
                     Industries Clients
