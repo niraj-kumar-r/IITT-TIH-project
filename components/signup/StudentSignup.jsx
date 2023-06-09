@@ -272,6 +272,111 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     />
                 </View>
             </View>
+
+            <View
+                style={{
+                    borderBottomWidth: StyleSheet.hairlineWidth,
+                    borderColor: COLORS.gray,
+                    marginVertical: SIZES.xLarge,
+                    marginHorizontal: SIZES.large,
+                }}
+            />
+
+            <View
+                style={{
+                    flex: 1,
+                    backgroundColor: COLORS.pureWhite,
+                    width: "100%",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                    gap: 10,
+                }}
+            >
+                <View
+                    style={{
+                        width: "90%",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <Text
+                        style={{
+                            fontFamily: "NunitoBold",
+                            fontSize: SIZES.large,
+                            width: "80%",
+                            textAlign: "left",
+                        }}
+                    >
+                        Address Information
+                    </Text>
+                    <AccentButton
+                        label="Clear"
+                        textStyle={{
+                            marginVertical: SIZES.xSmall,
+                            paddingVertical: SIZES.xSmall / 2,
+                        }}
+                        onSubmit={() => {
+                            setFormState({
+                                ...formState,
+                                street: "",
+                                city: "",
+                                stateOrProvince: "",
+                                zipOrPostalCode: "",
+                                country: "",
+                            });
+                        }}
+                    />
+                </View>
+
+                <View style={{ width: "90%", gap: 10 }}>
+                    <FormInputWithLabel
+                        label="Street"
+                        value={formState.street}
+                        setValue={(value) => handleFormChange("street", value)}
+                        inputOptions={{
+                            autoComplete: "street-address",
+                        }}
+                    />
+                    <FormInputWithLabel
+                        label="City"
+                        value={formState.city}
+                        setValue={(value) => handleFormChange("city", value)}
+                        inputOptions={{
+                            autoComplete: "address-line2",
+                        }}
+                    />
+                    <FormInputWithLabel
+                        label="State/Province"
+                        value={formState.stateOrProvince}
+                        setValue={(value) =>
+                            handleFormChange("stateOrProvince", value)
+                        }
+                        inputOptions={{
+                            autoComplete: "address-line2",
+                        }}
+                    />
+                    <FormInputWithLabel
+                        label="Zip/Postal Code"
+                        value={formState.zipOrPostalCode}
+                        setValue={(value) =>
+                            handleFormChange("zipOrPostalCode", value)
+                        }
+                        inputOptions={{
+                            autoComplete: "postal-code",
+                            inputMode: "numeric",
+                        }}
+                    />
+                    <FormInputWithLabel
+                        label="Country"
+                        value={formState.country}
+                        setValue={(value) => handleFormChange("country", value)}
+                        inputOptions={{
+                            autoComplete: "country",
+                        }}
+                    />
+                </View>
+            </View>
         </View>
     );
 };
