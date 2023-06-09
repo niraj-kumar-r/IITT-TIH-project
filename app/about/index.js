@@ -16,6 +16,7 @@ const AboutUs = () => {
             <Drawer.Screen
                 options={{
                     title: "About Us",
+                    drawerLabel: "About Us",
                     headerTitleAlign: "center",
                     headerTitleStyle: {
                         fontFamily: "NunitoBold",

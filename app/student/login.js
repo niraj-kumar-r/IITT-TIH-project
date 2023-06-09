@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import Login from "../../components/login/Login";
 import { Stack } from "expo-router";
 import { COLORS, SIZES } from "../../constants/theme";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import { useRouter } from "expo-router";
+import BackIconSvg from "../../assets/icons/arrow-back-sharp.svg";
 
 const StudentLogin = () => {
+    const router = useRouter();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -26,6 +29,15 @@ const StudentLogin = () => {
                         fontSize: SIZES.xLarge,
                     },
                     headerStyle: { backgroundColor: COLORS.pureWhite },
+                    headerLeft: () => (
+                        <BackIconSvg
+                            color="black"
+                            width={SIZES.xLarge}
+                            height={SIZES.xLarge}
+                            onPress={() => router.back()}
+                            onHover={() => {}}
+                        />
+                    ),
                 }}
             />
             <Login

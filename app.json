@@ -6,5 +6,8 @@
     },
     "name": "IITTNIF-test",
     "slug": "IITTNIF-test"
-  }
+  },
+  "assetBundlePatterns": [
+    "assets/*",
+  ],
 }

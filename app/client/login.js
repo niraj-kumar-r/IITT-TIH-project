@@ -3,8 +3,11 @@ import Login from "../../components/login/Login";
 import { View } from "react-native";
 import { Stack } from "expo-router";
 import { SIZES, COLORS } from "../../constants/theme";
+import BackIconSvg from "../../assets/icons/arrow-back-sharp.svg";
+import { useRouter } from "expo-router";
 
 const ClientLogin = () => {
+    const router = useRouter();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -26,6 +29,15 @@ const ClientLogin = () => {
                         fontSize: SIZES.xLarge,
                     },
                     headerStyle: { backgroundColor: COLORS.pureWhite },
+                    headerLeft: () => (
+                        <BackIconSvg
+                            color="black"
+                            width={SIZES.xLarge}
+                            height={SIZES.xLarge}
+                            onPress={() => router.back()}
+                            onHover={() => {}}
+                        />
+                    ),
                 }}
             />
             <Login
