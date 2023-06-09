@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Login from "../../components/login/Login";
 import { View } from "react-native";
+import { Stack } from "expo-router";
+import { SIZES, COLORS } from "../../constants/theme";
 
 const ClientLogin = () => {
     const [username, setUsername] = useState("");
@@ -15,6 +17,17 @@ const ClientLogin = () => {
                 alignItems: "center",
             }}
         >
+            <Stack.Screen
+                options={{
+                    title: "Client Login",
+                    headerTitleAlign: "center",
+                    headerTitleStyle: {
+                        fontFamily: "NunitoBold",
+                        fontSize: SIZES.xLarge,
+                    },
+                    headerStyle: { backgroundColor: COLORS.pureWhite },
+                }}
+            />
             <Login
                 username={username}
                 password={password}

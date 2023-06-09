@@ -1,7 +1,8 @@
 import { ScrollView } from "react-native";
 import React, { useState } from "react";
+import { Stack } from "expo-router";
 import ClientSignup from "../../components/signup/ClientSignup";
-import { COLORS } from "../../constants/theme";
+import { COLORS, SIZES } from "../../constants/theme";
 
 const Signup = () => {
     const [formState, setFormState] = useState({});
@@ -14,6 +15,17 @@ const Signup = () => {
                 backgroundColor: COLORS.pureWhite,
             }}
         >
+            <Stack.Screen
+                options={{
+                    title: "Client Signup",
+                    headerTitleAlign: "center",
+                    headerTitleStyle: {
+                        fontFamily: "NunitoBold",
+                        fontSize: SIZES.xLarge,
+                    },
+                    headerStyle: { backgroundColor: COLORS.pureWhite },
+                }}
+            />
             <ClientSignup
                 formState={formState}
                 setFormState={setFormState}

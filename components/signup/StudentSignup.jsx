@@ -21,6 +21,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     justifyContent: "flex-start",
                     alignItems: "center",
                     gap: 10,
+                    marginTop: 15,
                 }}
             >
                 <Text

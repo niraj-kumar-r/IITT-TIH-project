@@ -1,6 +1,5 @@
-import { useCallback } from "react";
 import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
+import { SplashScreen } from "expo-router";
 import { Drawer } from "expo-router/drawer";
 import { COLORS, SIZES } from "../constants/theme";
 
@@ -12,14 +11,8 @@ const Layout = () => {
         NunitoSemiBold: require("../assets/fonts/NunitoSans_10pt-SemiBold.ttf"),
     });
 
-    const onLayoutRootView = useCallback(async () => {
-        if (fontsLoaded) {
-            await SplashScreen.hideAsync();
-        }
-    }, [fontsLoaded]);
-
     if (!fontsLoaded) {
-        return null;
+        return <SplashScreen />;
     }
 
     const headerOptions = {
@@ -32,7 +25,7 @@ const Layout = () => {
     };
 
     return (
-        <Drawer onLayout={onLayoutRootView}>
+        <Drawer>
             <Drawer.Screen
                 name="index"
                 options={{
@@ -42,26 +35,30 @@ const Layout = () => {
                 }}
             />
             <Drawer.Screen
-                name="about/index"
+                name="about"
                 options={{
                     drawerLabel: "About Us",
                     title: "About Us",
+                    headerShown: false,
                     ...headerOptions,
                 }}
             />
             <Drawer.Screen
-                name="client/login"
+                name="client"
                 options={{
                     drawerLabel: "Client Login",
                     title: "Client Login",
+                    headerShown: false,
+
                     ...headerOptions,
                 }}
             />
             <Drawer.Screen
-                name="student/login"
+                name="student"
                 options={{
                     drawerLabel: "Student Login",
                     title: "Student Login",
+                    headerShown: false,
                     ...headerOptions,
                 }}
             />
