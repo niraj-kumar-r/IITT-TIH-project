@@ -86,6 +86,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                         style={{
                             backgroundColor: COLORS.gray2,
                             padding: SIZES.large,
+                            paddingHorizontal: SIZES.xSmall,
                             borderRadius: SIZES.medium / 2,
                             borderStyle: "dashed",
                             borderWidth: 1,
@@ -96,19 +97,24 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                             gap: 2.5,
                         }}
                     >
-                        <Text>
+                        <Text style={{ fontFamily: "NunitoRegular" }}>
                             <Text
                                 style={{
                                     color: COLORS.primary,
                                     textDecorationLine: "underline",
+                                    fontFamily: "NunitoRegular",
                                 }}
                             >
                                 Upload your resume
                             </Text>
                             {" or"} drag and drop it here
                         </Text>
-                        <Text>Only .doc, .docx, .pdf, .odt, .rtd</Text>
-                        <Text>(Optional)</Text>
+                        <Text style={{ fontFamily: "NunitoRegular" }}>
+                            Only .doc, .docx, .pdf, .odt, .rtd
+                        </Text>
+                        <Text style={{ fontFamily: "NunitoRegular" }}>
+                            (Optional)
+                        </Text>
                     </View>
                 </View>
 
@@ -455,10 +461,248 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                         inputWidth="90%"
                         inputOptions={{
                             multiLine: true,
-                            marginVertical: SIZES.small,
+                            marginVertical: SIZES.small * 0.7,
                         }}
                     />
                 </View>
+            </View>
+
+            <View
+                style={{
+                    borderBottomWidth: StyleSheet.hairlineWidth,
+                    borderColor: COLORS.gray,
+                    marginVertical: SIZES.xLarge,
+                    marginHorizontal: SIZES.large,
+                }}
+            />
+
+            <View
+                style={{
+                    flex: 1,
+                    backgroundColor: COLORS.pureWhite,
+                    width: "100%",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                    gap: 10,
+                }}
+            >
+                <View
+                    style={{
+                        width: "90%",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <Text
+                        style={{
+                            fontFamily: "NunitoBold",
+                            fontSize: SIZES.large,
+                            width: "80%",
+                            textAlign: "left",
+                        }}
+                    >
+                        Educational Details
+                    </Text>
+                    <AccentButton
+                        label="Clear"
+                        textStyle={{
+                            marginVertical: SIZES.xSmall,
+                            paddingVertical: SIZES.xSmall / 2,
+                        }}
+                        onSubmit={() => {
+                            setFormState({
+                                ...formState,
+                            });
+                        }}
+                    />
+                </View>
+
+                <View style={{ width: "90%" }}>
+                    <AccentButton
+                        label={"+Add"}
+                        accentColor={"transparent"}
+                        textColor={COLORS.tertiary}
+                        width="20%"
+                        textStyle={{ marginVertical: 0, padding: 0 }}
+                    />
+                </View>
+            </View>
+
+            <View
+                style={{
+                    borderBottomWidth: StyleSheet.hairlineWidth,
+                    borderColor: COLORS.gray,
+                    marginVertical: SIZES.xLarge,
+                    marginHorizontal: SIZES.large,
+                }}
+            />
+
+            <View
+                style={{
+                    flex: 1,
+                    backgroundColor: COLORS.pureWhite,
+                    width: "100%",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                    gap: 10,
+                }}
+            >
+                <View
+                    style={{
+                        width: "90%",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <Text
+                        style={{
+                            fontFamily: "NunitoBold",
+                            fontSize: SIZES.large,
+                            width: "80%",
+                            textAlign: "left",
+                        }}
+                    >
+                        Experience Details
+                    </Text>
+                    <AccentButton
+                        label="Clear"
+                        textStyle={{
+                            marginVertical: SIZES.xSmall,
+                            paddingVertical: SIZES.xSmall / 2,
+                        }}
+                        onSubmit={() => {
+                            setFormState({
+                                ...formState,
+                            });
+                        }}
+                    />
+                </View>
+
+                <View style={{ width: "90%" }}>
+                    <AccentButton
+                        label={"+Add"}
+                        accentColor={"transparent"}
+                        textColor={COLORS.tertiary}
+                        width="20%"
+                        textStyle={{ marginVertical: 0, padding: 0 }}
+                    />
+                </View>
+            </View>
+
+            <View
+                style={{
+                    borderBottomWidth: StyleSheet.hairlineWidth,
+                    borderColor: COLORS.gray,
+                    marginVertical: SIZES.xLarge,
+                    marginHorizontal: SIZES.large,
+                }}
+            />
+
+            <View
+                style={{
+                    flex: 1,
+                    backgroundColor: COLORS.pureWhite,
+                    width: "100%",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                    gap: 10,
+                }}
+            >
+                <View
+                    style={{
+                        width: "90%",
+                    }}
+                >
+                    <Text
+                        style={{
+                            fontFamily: "NunitoBold",
+                            fontSize: SIZES.large,
+                            width: "80%",
+                            textAlign: "left",
+                        }}
+                    >
+                        Attachment Information
+                    </Text>
+                    <Text
+                        style={{
+                            fontFamily: "NunitoRegular",
+                            fontSize: SIZES.medium * 0.85,
+                            color: COLORS.gray,
+                            width: "100%",
+                            textAlign: "left",
+                            // marginBottom: 20,
+                            // marginTop: 10,
+                        }}
+                    >
+                        Resume
+                    </Text>
+                    <View
+                        style={{
+                            backgroundColor: COLORS.gray2,
+                            padding: SIZES.large,
+                            borderRadius: SIZES.medium / 2,
+                            borderStyle: "dashed",
+                            borderWidth: 1,
+                            borderColor: COLORS.gray,
+                            justifyContent: "center",
+                            alignItems: "center",
+                            marginVertical: SIZES.large,
+                            gap: 2.5,
+                        }}
+                    >
+                        <Text
+                            style={{
+                                fontFamily: "NunitoRegular",
+                            }}
+                        >
+                            Browse
+                        </Text>
+                    </View>
+                </View>
+            </View>
+
+            <View
+                style={{
+                    borderBottomWidth: StyleSheet.hairlineWidth,
+                    borderColor: COLORS.gray,
+                    marginVertical: SIZES.xLarge,
+                    marginHorizontal: SIZES.large,
+                }}
+            />
+            <View
+                style={{
+                    flex: 1,
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    columnGap: SIZES.medium,
+                    marginTop: 20,
+                }}
+            >
+                <AccentButton
+                    label="Cancel"
+                    width="100%"
+                    onSubmit={() => setFormState({})}
+                    accentColor={COLORS.gray2}
+                    textColor="black"
+                    textStyle={{
+                        fontSize: SIZES.medium,
+                        paddingHorizontal: SIZES.xxLarge,
+                        marginVertical: 0,
+                    }}
+                />
+                <AccentButton
+                    label="Register"
+                    onSubmit={onSubmit}
+                    width="100%"
+                    textStyle={{
+                        fontSize: SIZES.medium,
+                        paddingHorizontal: SIZES.xxLarge,
+                        marginVertical: 0,
+                    }}
+                />
             </View>
         </View>
     );
