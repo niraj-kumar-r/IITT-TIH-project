@@ -377,6 +377,89 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     />
                 </View>
             </View>
+
+            <View
+                style={{
+                    borderBottomWidth: StyleSheet.hairlineWidth,
+                    borderColor: COLORS.gray,
+                    marginVertical: SIZES.xLarge,
+                    marginHorizontal: SIZES.large,
+                }}
+            />
+
+            <View
+                style={{
+                    flex: 1,
+                    backgroundColor: COLORS.pureWhite,
+                    width: "100%",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                    gap: 10,
+                }}
+            >
+                <View
+                    style={{
+                        width: "90%",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <Text
+                        style={{
+                            fontFamily: "NunitoBold",
+                            fontSize: SIZES.large,
+                            width: "80%",
+                            textAlign: "left",
+                        }}
+                    >
+                        Professional Details
+                    </Text>
+                    <AccentButton
+                        label="Clear"
+                        textStyle={{
+                            marginVertical: SIZES.xSmall,
+                            paddingVertical: SIZES.xSmall / 2,
+                        }}
+                        onSubmit={() => {
+                            setFormState({
+                                ...formState,
+                                currentJobTitle: "",
+                                skillSet: "",
+                            });
+                        }}
+                    />
+                </View>
+
+                <View style={{ width: "100%", gap: 10, alignItems: "center" }}>
+                    <FormPickerInput
+                        label="Current Job Title"
+                        optionsList={[
+                            "None",
+                            "Fresher",
+                            "Project Lead",
+                            "Project Manager",
+                        ]}
+                        value={formState.currentJobTitle}
+                        setValue={(value) => {
+                            handleFormChange("currentJobTitle", value);
+                        }}
+                    />
+
+                    <FormInputWithLabel
+                        label="Skill Set"
+                        value={formState.skillSet}
+                        setValue={(value) =>
+                            handleFormChange("skillSet", value)
+                        }
+                        inputWidth="90%"
+                        inputOptions={{
+                            multiLine: true,
+                            marginVertical: SIZES.small,
+                        }}
+                    />
+                </View>
+            </View>
         </View>
     );
 };
