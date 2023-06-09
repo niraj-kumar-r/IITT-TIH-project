@@ -6,7 +6,11 @@ const AboutUs = () => {
     return (
         <ScrollView
             showsVerticalScrollIndicator={false}
-            style={{ flex: 1, backgroundColor: COLORS.pureWhite, padding: 15 }}
+            style={{
+                flex: 1,
+                backgroundColor: COLORS.pureWhite,
+                padding: SIZES.small,
+            }}
         >
             <Text
                 style={{
@@ -17,7 +21,13 @@ const AboutUs = () => {
             >
                 About the NM-ICPS
             </Text>
-            <Text style={{ marginBottom: 15, marginTop: 10 }}>
+            <Text
+                style={{
+                    marginBottom: 15,
+                    marginTop: 10,
+                    fontFamily: "NunitoRegular",
+                }}
+            >
                 Cyber-Physical Systems (CPS) are a new class of engineered
                 systems that integrate computation and physical processes in a
                 dynamic environment. CPS encompasses technology areas of
@@ -52,7 +62,13 @@ const AboutUs = () => {
                 document for the Mission and Hubs.
             </Text>
 
-            <Text>
+            <Text
+                style={{
+                    marginBottom: 20,
+                    marginTop: 10,
+                    fontFamily: "NunitoRegular",
+                }}
+            >
                 Positioning and Precision Technologies (PPTs) are indispensable
                 tools for monitoring, integrating, and analyzing spatially and
                 temporally distributed resources to aid in effective
