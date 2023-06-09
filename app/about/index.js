@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, ScrollView } from "react-native";
+import { Drawer } from "expo-router/drawer";
 import { COLORS, SIZES } from "../../constants/theme";
 
 const AboutUs = () => {
@@ -12,6 +13,17 @@ const AboutUs = () => {
                 padding: SIZES.small,
             }}
         >
+            <Drawer.Screen
+                options={{
+                    title: "About Us",
+                    headerTitleAlign: "center",
+                    headerTitleStyle: {
+                        fontFamily: "NunitoBold",
+                        fontSize: SIZES.xLarge,
+                    },
+                    headerStyle: { backgroundColor: COLORS.pureWhite },
+                }}
+            />
             <Text
                 style={{
                     fontFamily: "NunitoBold",
