@@ -105,11 +105,171 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                             >
                                 Upload your resume
                             </Text>
-                            or drag and drop it here
+                            {" or"} drag and drop it here
                         </Text>
                         <Text>Only .doc, .docx, .pdf, .odt, .rtd</Text>
                         <Text>(Optional)</Text>
                     </View>
+                </View>
+
+                <View
+                    style={{
+                        width: "90%",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <Text
+                        style={{
+                            fontFamily: "NunitoBold",
+                            fontSize: SIZES.large,
+                            width: "80%",
+                            textAlign: "left",
+                        }}
+                    >
+                        Create your credentials
+                    </Text>
+                    <AccentButton
+                        label="Clear"
+                        textStyle={{
+                            marginVertical: SIZES.xSmall,
+                            paddingVertical: SIZES.xSmall / 2,
+                        }}
+                        onSubmit={() => {
+                            setFormState({
+                                ...formState,
+                                email: "",
+                                password: "",
+                                reEnterPassword: "",
+                            });
+                        }}
+                    />
+                </View>
+
+                <View style={{ width: "90%", gap: 10 }}>
+                    <FormInputWithLabel
+                        label="Email"
+                        value={formState.email}
+                        setValue={(value) => handleFormChange("email", value)}
+                        inputOptions={{
+                            inputMode: "email",
+                            autoComplete: "email",
+                        }}
+                        showAsterisk={true}
+                    />
+                    <FormInputWithLabel
+                        label="Password"
+                        value={formState.password}
+                        setValue={(value) =>
+                            handleFormChange("password", value)
+                        }
+                        inputOptions={{
+                            autoComplete: "new-password",
+                            secureTextEntry: true,
+                        }}
+                        showAsterisk={true}
+                    />
+                    <FormInputWithLabel
+                        label="Re-Enter Password"
+                        value={formState.reEnterPassword}
+                        setValue={(value) =>
+                            handleFormChange("reEnterPassword", value)
+                        }
+                        inputOptions={{
+                            autoComplete: "new-password",
+                            secureTextEntry: true,
+                        }}
+                        showAsterisk={true}
+                    />
+                </View>
+            </View>
+
+            <View
+                style={{
+                    borderBottomWidth: StyleSheet.hairlineWidth,
+                    borderColor: COLORS.gray,
+                    marginVertical: SIZES.xLarge,
+                    marginHorizontal: SIZES.large,
+                }}
+            />
+
+            <View
+                style={{
+                    flex: 1,
+                    backgroundColor: COLORS.pureWhite,
+                    width: "100%",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                    gap: 10,
+                }}
+            >
+                <View
+                    style={{
+                        width: "90%",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                    }}
+                >
+                    <Text
+                        style={{
+                            fontFamily: "NunitoBold",
+                            fontSize: SIZES.large,
+                            width: "80%",
+                            textAlign: "left",
+                        }}
+                    >
+                        Basic Info
+                    </Text>
+                    <AccentButton
+                        label="Clear"
+                        textStyle={{
+                            marginVertical: SIZES.xSmall,
+                            paddingVertical: SIZES.xSmall / 2,
+                        }}
+                        onSubmit={() => {
+                            setFormState({
+                                ...formState,
+                                firstName: "",
+                                lastName: "",
+                                mobile: "",
+                            });
+                        }}
+                    />
+                </View>
+
+                <View style={{ width: "90%", gap: 10 }}>
+                    <FormInputWithLabel
+                        label="First Name"
+                        value={formState.firstName}
+                        setValue={(value) =>
+                            handleFormChange("firstName", value)
+                        }
+                        inputOptions={{
+                            autoComplete: "given-name",
+                        }}
+                    />
+                    <FormInputWithLabel
+                        label="Last Name"
+                        value={formState.lastName}
+                        setValue={(value) =>
+                            handleFormChange("lastName", value)
+                        }
+                        inputOptions={{
+                            autoComplete: "family-name",
+                        }}
+                        showAsterisk={true}
+                    />
+                    <FormInputWithLabel
+                        label="Mobile"
+                        value={formState.mobile}
+                        setValue={(value) => handleFormChange("mobile", value)}
+                        inputOptions={{
+                            autoComplete: "tel",
+                            inputMode: "tel",
+                        }}
+                    />
                 </View>
             </View>
         </View>
