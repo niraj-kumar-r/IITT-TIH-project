@@ -2,7 +2,7 @@ import { ScrollView } from "react-native";
 import React, { useState } from "react";
 import StudentSignup from "../../components/signup/StudentSignup";
 import { Stack } from "expo-router";
-import { COLORS, SIZES } from "../../constants/theme";
+import { COLORS } from "../../constants/theme";
 
 const Signup = () => {
     const [formState, setFormState] = useState({});

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Login from "../../components/login/Login";
 import { Stack } from "expo-router";
-import { COLORS, SIZES } from "../../constants/theme";
+import { SIZES } from "../../constants/theme";
 import { View } from "react-native";
 import { useRouter } from "expo-router";
 import BackIconSvg from "../../assets/icons/arrow-back-sharp.svg";
