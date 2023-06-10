@@ -18,12 +18,6 @@ const Signup = () => {
             <Stack.Screen
                 options={{
                     title: "Student Signup",
-                    headerTitleAlign: "center",
-                    headerTitleStyle: {
-                        fontFamily: "NunitoBold",
-                        fontSize: SIZES.xLarge,
-                    },
-                    headerStyle: { backgroundColor: COLORS.pureWhite },
                 }}
             />
             <StudentSignup

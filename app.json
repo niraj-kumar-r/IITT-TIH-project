@@ -5,6 +5,14 @@
       "bundler": "metro"
     },
     "name": "IITTNIF-test",
-    "slug": "IITTNIF-test"
-  },
+    "slug": "IITTNIF-test",
+    "extra": {
+      "eas": {
+        "projectId": "3a81e428-afd3-45e7-b800-a862db856fb5"
+      }
+    },
+    "android": {
+      "package": "com.hereticinquisitor.IITTNIFtest"
+    }
+  }
 }

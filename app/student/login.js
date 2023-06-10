@@ -23,12 +23,7 @@ const StudentLogin = () => {
             <Stack.Screen
                 options={{
                     title: "Student Login",
-                    headerTitleAlign: "center",
-                    headerTitleStyle: {
-                        fontFamily: "NunitoBold",
-                        fontSize: SIZES.xLarge,
-                    },
-                    headerStyle: { backgroundColor: COLORS.pureWhite },
+
                     headerLeft: () => (
                         <BackIconSvg
                             color="black"
