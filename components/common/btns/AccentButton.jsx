@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
-import { COLORS, SIZES } from "../../../constants/theme";
+import { COLORS, SIZES, FONT } from "../../../constants/theme";
 
 const AccentButton = ({
     label,
@@ -21,7 +21,7 @@ const AccentButton = ({
                     color: textColor ?? COLORS.pureWhite,
                     marginVertical: SIZES.large,
                     borderRadius: SIZES.medium / 2,
-                    fontFamily: "NunitoSemiBold",
+                    fontFamily: FONT.semibold,
                     ...textStyle,
                 }}
             >

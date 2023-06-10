@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 import FormInputWithLabel from "../common/input/FormInputWithLabel";
 import FormPickerInput from "../common/input/FormPickerInput";
 import AccentButton from "../common/btns/AccentButton";
-import { COLORS, SIZES } from "../../constants/theme";
+import { COLORS, SIZES, FONT } from "../../constants/theme";
 
 const StudentSignup = ({ formState, setFormState, onSubmit }) => {
     const handleFormChange = (key, value) => {
@@ -26,7 +26,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
             >
                 <Text
                     style={{
-                        fontFamily: "NunitoBold",
+                        fontFamily: FONT.bold,
                         fontSize: SIZES.large,
                         width: "90%",
                         textAlign: "left",
@@ -59,7 +59,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                 <View style={{ width: "90%" }}>
                     <Text
                         style={{
-                            fontFamily: "NunitoBold",
+                            fontFamily: FONT.bold,
                             fontSize: SIZES.large,
                             width: "100%",
                             textAlign: "left",
@@ -71,7 +71,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     </Text>
                     <Text
                         style={{
-                            fontFamily: "NunitoRegular",
+                            fontFamily: FONT.regular,
                             fontSize: SIZES.medium * 0.85,
                             color: COLORS.gray,
                             width: "100%",
@@ -98,22 +98,22 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                             gap: 2.5,
                         }}
                     >
-                        <Text style={{ fontFamily: "NunitoRegular" }}>
+                        <Text style={{ fontFamily: FONT.regular }}>
                             <Text
                                 style={{
                                     color: COLORS.primary,
                                     textDecorationLine: "underline",
-                                    fontFamily: "NunitoRegular",
+                                    fontFamily: FONT.regular,
                                 }}
                             >
                                 Upload your resume
                             </Text>
                             {" or"} drag and drop it here
                         </Text>
-                        <Text style={{ fontFamily: "NunitoRegular" }}>
+                        <Text style={{ fontFamily: FONT.regular }}>
                             Only .doc, .docx, .pdf, .odt, .rtd
                         </Text>
-                        <Text style={{ fontFamily: "NunitoRegular" }}>
+                        <Text style={{ fontFamily: FONT.regular }}>
                             (Optional)
                         </Text>
                     </View>
@@ -129,7 +129,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                 >
                     <Text
                         style={{
-                            fontFamily: "NunitoBold",
+                            fontFamily: FONT.bold,
                             fontSize: SIZES.large,
                             width: "80%",
                             textAlign: "left",
@@ -221,7 +221,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                 >
                     <Text
                         style={{
-                            fontFamily: "NunitoBold",
+                            fontFamily: FONT.bold,
                             fontSize: SIZES.large,
                             width: "80%",
                             textAlign: "left",
@@ -309,7 +309,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                 >
                     <Text
                         style={{
-                            fontFamily: "NunitoBold",
+                            fontFamily: FONT.bold,
                             fontSize: SIZES.large,
                             width: "80%",
                             textAlign: "left",
@@ -414,7 +414,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                 >
                     <Text
                         style={{
-                            fontFamily: "NunitoBold",
+                            fontFamily: FONT.bold,
                             fontSize: SIZES.large,
                             width: "80%",
                             textAlign: "left",
@@ -497,7 +497,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                 >
                     <Text
                         style={{
-                            fontFamily: "NunitoBold",
+                            fontFamily: FONT.bold,
                             fontSize: SIZES.large,
                             width: "80%",
                             textAlign: "left",
@@ -559,7 +559,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                 >
                     <Text
                         style={{
-                            fontFamily: "NunitoBold",
+                            fontFamily: FONT.bold,
                             fontSize: SIZES.large,
                             width: "80%",
                             textAlign: "left",
@@ -618,7 +618,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                 >
                     <Text
                         style={{
-                            fontFamily: "NunitoBold",
+                            fontFamily: FONT.bold,
                             fontSize: SIZES.large,
                             width: "80%",
                             textAlign: "left",
@@ -628,7 +628,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     </Text>
                     <Text
                         style={{
-                            fontFamily: "NunitoRegular",
+                            fontFamily: FONT.regular,
                             fontSize: SIZES.medium * 0.85,
                             color: COLORS.gray,
                             width: "100%",
@@ -655,7 +655,7 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     >
                         <Text
                             style={{
-                                fontFamily: "NunitoRegular",
+                                fontFamily: FONT.regular,
                             }}
                         >
                             Browse

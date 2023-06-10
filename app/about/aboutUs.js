@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, ScrollView } from "react-native";
-import { COLORS, SIZES } from "../../constants/theme";
+import { COLORS, SIZES, FONT } from "../../constants/theme";
 
 const AboutUs = () => {
     return (
@@ -14,7 +14,7 @@ const AboutUs = () => {
         >
             <Text
                 style={{
-                    fontFamily: "NunitoBold",
+                    fontFamily: FONT.bold,
                     fontSize: SIZES.medium,
                     textDecorationLine: "underline",
                 }}
@@ -25,7 +25,7 @@ const AboutUs = () => {
                 style={{
                     marginBottom: 15,
                     marginTop: 10,
-                    fontFamily: "NunitoRegular",
+                    fontFamily: FONT.regular,
                 }}
             >
                 Cyber-Physical Systems (CPS) are a new class of engineered
@@ -66,7 +66,7 @@ const AboutUs = () => {
                 style={{
                     marginBottom: 20,
                     marginTop: 10,
-                    fontFamily: "NunitoRegular",
+                    fontFamily: FONT.regular,
                 }}
             >
                 Positioning and Precision Technologies (PPTs) are indispensable

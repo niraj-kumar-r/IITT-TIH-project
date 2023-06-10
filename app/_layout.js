@@ -1,7 +1,7 @@
 import { useFonts } from "expo-font";
 import { SplashScreen } from "expo-router";
 import { Drawer } from "expo-router/drawer";
-import { COLORS, SIZES } from "../constants/theme";
+import { COLORS, SIZES, FONT } from "../constants/theme";
 
 export default function Layout() {
     const [fontsLoaded] = useFonts({
@@ -20,7 +20,7 @@ export default function Layout() {
             screenOptions={{
                 headerTitleAlign: "center",
                 headerTitleStyle: {
-                    fontFamily: "NunitoBold",
+                    fontFamily: FONT.bold,
                     fontSize: SIZES.xLarge,
                 },
                 headerStyle: { backgroundColor: COLORS.pureWhite },

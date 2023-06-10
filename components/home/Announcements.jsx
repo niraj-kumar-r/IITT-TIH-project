@@ -1,6 +1,6 @@
 import React from "react";
-import { FlatList, Text, View } from "react-native";
-import { COLORS, SIZES } from "../../constants/theme";
+import { Text, View } from "react-native";
+import { COLORS, FONT } from "../../constants/theme";
 import AnnouncementBtn from "../common/btns/AnnouncementBtn";
 import { announcements } from "../../data/announcementData";
 
@@ -16,7 +16,7 @@ const Announcements = () => {
         >
             <Text
                 style={{
-                    fontFamily: "NunitoBold",
+                    fontFamily: FONT.bold,
                     fontSize: 28,
                     textAlign: "center",
                 }}

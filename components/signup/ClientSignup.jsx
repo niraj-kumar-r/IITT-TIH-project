@@ -4,7 +4,7 @@ import { View, Text } from "react-native";
 import FormInputWithLabel from "../common/input/FormInputWithLabel";
 import FormPickerInput from "../common/input/FormPickerInput";
 import AccentButton from "../common/btns/AccentButton";
-import { COLORS, SIZES } from "../../constants/theme";
+import { COLORS, SIZES, FONT } from "../../constants/theme";
 
 const ClientSignup = ({ formState, setFormState, onSubmit }) => {
     const handleFormChange = (key, value) => {
@@ -46,7 +46,7 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
             >
                 <Text
                     style={{
-                        fontFamily: "NunitoBold",
+                        fontFamily: FONT.bold,
                         fontSize: SIZES.large,
                         width: "90%",
                         textAlign: "left",
@@ -122,7 +122,7 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
             >
                 <Text
                     style={{
-                        fontFamily: "NunitoBold",
+                        fontFamily: FONT.bold,
                         fontSize: SIZES.large,
                         width: "90%",
                         textAlign: "left",

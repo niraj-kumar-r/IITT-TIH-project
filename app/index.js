@@ -1,7 +1,7 @@
 import "react-native-gesture-handler";
 import { View, Text, ScrollView, Image, ImageBackground } from "react-native";
 
-import { COLORS, SIZES } from "../constants/theme";
+import { COLORS, SIZES, FONT } from "../constants/theme";
 import Announcements from "../components/home/Announcements";
 import logo from "../assets/images/iittnifLogo.png";
 import imageBg from "../assets/images/satelliteBg.jpeg";
@@ -47,7 +47,7 @@ const Home = () => {
                             <Text
                                 style={{
                                     color: COLORS.pureWhite,
-                                    fontFamily: "NunitoMedium",
+                                    fontFamily: FONT.medium,
                                     fontSize: SIZES.xLarge,
                                     textAlign: "center",
                                 }}

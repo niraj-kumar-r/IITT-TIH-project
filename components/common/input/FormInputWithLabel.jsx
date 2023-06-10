@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TextInput } from "react-native";
-import { COLORS, SIZES } from "../../../constants/theme";
+import { COLORS, SIZES, FONT } from "../../../constants/theme";
 
 const FormInputWithLabel = ({
     label,
@@ -14,7 +14,7 @@ const FormInputWithLabel = ({
 }) => {
     return (
         <View style={{ gap: SIZES.xSmall / 1.5, width: inputWidth }}>
-            <Text style={{ fontFamily: "NunitoBold" }}>
+            <Text style={{ fontFamily: FONT.bold }}>
                 {label}
                 {showAsterisk ? (
                     <Text style={{ color: COLORS.tertiary }}>*</Text>

@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
-import { COLORS, SIZES } from "../../../constants/theme";
+import { COLORS, SIZES, FONT } from "../../../constants/theme";
 
 const FormPickerInput = ({
     label,
@@ -20,7 +20,7 @@ const FormPickerInput = ({
                 alignItems: "center",
             }}
         >
-            <Text style={{ fontFamily: "NunitoBold", width: "90%" }}>
+            <Text style={{ fontFamily: FONT.bold, width: "90%" }}>
                 {label}
                 {showAsterisk ? (
                     <Text style={{ color: COLORS.tertiary }}>*</Text>

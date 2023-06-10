@@ -13,9 +13,10 @@ const COLORS = {
 };
 
 const FONT = {
-    regular: "DMRegular",
-    medium: "DMMedium",
-    bold: "DMBold",
+    regular: "NunitoRegular",
+    medium: "NunitoMedium",
+    semibold: "NunitoSemiBold",
+    bold: "NunitoBold",
 };
 
 const SIZES = {

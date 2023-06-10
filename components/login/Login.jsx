@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 
-import { COLORS, SIZES } from "../../constants/theme";
+import { COLORS, SIZES, FONT } from "../../constants/theme";
 import AccentButton from "../common/btns/AccentButton";
 import FormInputWithLabel from "../common/input/FormInputWithLabel";
 import UsernameIcon from "../../assets/icons/username.svg";
@@ -79,7 +79,7 @@ const Login = ({
                     <Text
                         style={{
                             color: COLORS.secondary,
-                            fontFamily: "NunitoSemiBold",
+                            fontFamily: FONT.semibold,
                         }}
                     >
                         Register
