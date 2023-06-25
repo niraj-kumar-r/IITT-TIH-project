@@ -5,13 +5,20 @@ import { Stack } from "expo-router";
 import { SIZES } from "../../constants/theme";
 import BackIconSvg from "../../assets/icons/arrow-back-sharp.svg";
 import { useRouter } from "expo-router";
+import { useFormik } from "formik";
 
 const ClientLogin = () => {
     const router = useRouter();
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    // const [username, setUsername] = useState("");
+    // const [password, setPassword] = useState("");
 
-    const handleSubmit = () => {};
+    const { handleSubmit, handleChange, values } = useFormik({
+        initialValues: { username: "", password: "" },
+        onSubmit: (values) =>
+            alert(`Email: ${values.username}, Password: ${values.password}`),
+    });
+
+    // const handleSubmit = () => {};
     return (
         <View
             style={{
@@ -35,12 +42,11 @@ const ClientLogin = () => {
                 }}
             />
             <Login
-                username={username}
-                password={password}
-                setUsername={setUsername}
-                setPassword={setPassword}
-                signUpPath="/client/signup"
+                username={values.username}
+                password={values.password}
+                handleChange={handleChange}
                 onSubmit={handleSubmit}
+                signUpPath="/client/signup"
             />
         </View>
     );
