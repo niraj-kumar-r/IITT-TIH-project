@@ -15,15 +15,22 @@ const ClientLogin = () => {
         password: Yup.string().required("Password is required"),
     });
 
-    const { handleSubmit, handleChange, handleBlur, values, touched, errors } =
-        useFormik({
-            validationSchema: loginSchema,
-            initialValues: { username: "", password: "" },
-            onSubmit: (values) =>
-                alert(
-                    `Email: ${values.username}, Password: ${values.password}`
-                ),
-        });
+    const {
+        handleSubmit,
+        handleChange,
+        handleBlur,
+        values,
+        touched,
+        errors,
+        resetForm,
+    } = useFormik({
+        validationSchema: loginSchema,
+        initialValues: { username: "", password: "" },
+        onSubmit: (values) => {
+            alert(`Email: ${values.username}, Password: ${values.password}`);
+            resetForm();
+        },
+    });
 
     return (
         <View
