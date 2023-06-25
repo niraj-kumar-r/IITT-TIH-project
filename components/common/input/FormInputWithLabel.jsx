@@ -5,7 +5,7 @@ import { COLORS, SIZES, FONT } from "../../../constants/theme";
 const FormInputWithLabel = ({
     label,
     value,
-    setValue,
+    handleChange,
     placeholder,
     icon,
     inputOptions,
@@ -44,7 +44,7 @@ const FormInputWithLabel = ({
                 <TextInput
                     value={value}
                     placeholder={placeholder ?? ""}
-                    onChangeText={(text) => setValue(text)}
+                    onChangeText={handleChange}
                     style={{
                         width: icon !== undefined ? "85%" : "93%",
                         marginHorizontal: SIZES.xSmall,

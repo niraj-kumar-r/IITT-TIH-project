@@ -4,14 +4,21 @@ import { Stack } from "expo-router";
 import { SIZES } from "../../constants/theme";
 import { View } from "react-native";
 import { useRouter } from "expo-router";
+import { useFormik } from "formik";
 import BackIconSvg from "../../assets/icons/arrow-back-sharp.svg";
 
 const StudentLogin = () => {
     const router = useRouter();
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    // const [username, setUsername] = useState("");
+    // const [password, setPassword] = useState("");
 
-    const handleSubmit = () => {};
+    const { handleSubmit, handleChange, values } = useFormik({
+        initialValues: { username: "", password: "" },
+        onSubmit: (values) =>
+            alert(`Email: ${values.username}, Password: ${values.password}`),
+    });
+
+    // const handleSubmit = () => {};
     return (
         <View
             style={{
@@ -36,12 +43,11 @@ const StudentLogin = () => {
                 }}
             />
             <Login
-                username={username}
-                password={password}
-                setUsername={setUsername}
-                setPassword={setPassword}
-                signUpPath="student/signup"
+                username={values.username}
+                password={values.password}
+                handleChange={handleChange}
                 onSubmit={handleSubmit}
+                signUpPath="student/signup"
             />
         </View>
     );

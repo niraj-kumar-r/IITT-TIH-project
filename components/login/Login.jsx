@@ -8,14 +8,7 @@ import FormInputWithLabel from "../common/input/FormInputWithLabel";
 import UsernameIcon from "../../assets/icons/username.svg";
 import PasswordIcon from "../../assets/icons/password.svg";
 
-const Login = ({
-    username,
-    password,
-    setUsername,
-    setPassword,
-    signUpPath,
-    onSubmit,
-}) => {
+const Login = ({ username, password, handleChange, signUpPath, onSubmit }) => {
     const router = useRouter();
     return (
         <View
@@ -30,7 +23,7 @@ const Login = ({
             <FormInputWithLabel
                 label="Username"
                 value={username}
-                setValue={setUsername}
+                handleChange={handleChange("username")}
                 placeholder="Enter your username"
                 icon={
                     <UsernameIcon
@@ -48,7 +41,7 @@ const Login = ({
             <FormInputWithLabel
                 label="Password"
                 value={password}
-                setValue={setPassword}
+                handleChange={handleChange("password")}
                 placeholder="Enter your account password"
                 icon={
                     <PasswordIcon
