@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Login from "../../components/login/Login";
 import { Stack } from "expo-router";
 import { SIZES } from "../../constants/theme";
@@ -9,8 +9,6 @@ import BackIconSvg from "../../assets/icons/arrow-back-sharp.svg";
 
 const StudentLogin = () => {
     const router = useRouter();
-    // const [username, setUsername] = useState("");
-    // const [password, setPassword] = useState("");
 
     const { handleSubmit, handleChange, values } = useFormik({
         initialValues: { username: "", password: "" },
@@ -18,7 +16,6 @@ const StudentLogin = () => {
             alert(`Email: ${values.username}, Password: ${values.password}`),
     });
 
-    // const handleSubmit = () => {};
     return (
         <View
             style={{

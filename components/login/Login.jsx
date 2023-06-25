@@ -8,7 +8,16 @@ import FormInputWithLabel from "../common/input/FormInputWithLabel";
 import UsernameIcon from "../../assets/icons/username.svg";
 import PasswordIcon from "../../assets/icons/password.svg";
 
-const Login = ({ username, password, handleChange, signUpPath, onSubmit }) => {
+const Login = ({
+    username,
+    password,
+    handleChange,
+    handleBlur,
+    errors,
+    touched,
+    signUpPath,
+    onSubmit,
+}) => {
     const router = useRouter();
     return (
         <View
@@ -24,6 +33,9 @@ const Login = ({ username, password, handleChange, signUpPath, onSubmit }) => {
                 label="Username"
                 value={username}
                 handleChange={handleChange("username")}
+                handleBlur={handleBlur("username")}
+                error={errors.username}
+                touched={touched.username}
                 placeholder="Enter your username"
                 icon={
                     <UsernameIcon
@@ -42,6 +54,9 @@ const Login = ({ username, password, handleChange, signUpPath, onSubmit }) => {
                 label="Password"
                 value={password}
                 handleChange={handleChange("password")}
+                handleBlur={handleBlur("password")}
+                error={errors.password}
+                touched={touched.password}
                 placeholder="Enter your account password"
                 icon={
                     <PasswordIcon

@@ -6,12 +6,20 @@ const FormInputWithLabel = ({
     label,
     value,
     handleChange,
+    handleBlur,
+    error,
+    touched,
     placeholder,
     icon,
     inputOptions,
     inputWidth,
     showAsterisk = false,
 }) => {
+    const validationColor = !touched
+        ? "black"
+        : error
+        ? COLORS.tertiary
+        : "black";
     return (
         <View style={{ gap: SIZES.xSmall / 1.5, width: inputWidth }}>
             <Text style={{ fontFamily: FONT.bold }}>
@@ -25,6 +33,7 @@ const FormInputWithLabel = ({
                 style={{
                     borderWidth: 0.5,
                     borderRadius: SIZES.medium / 2,
+                    borderColor: validationColor,
                     flexDirection: "row",
                     alignItems: "center",
                     justifyContent: "center",
@@ -45,6 +54,7 @@ const FormInputWithLabel = ({
                     value={value}
                     placeholder={placeholder ?? ""}
                     onChangeText={handleChange}
+                    onBlur={handleBlur}
                     style={{
                         width: icon !== undefined ? "85%" : "93%",
                         marginHorizontal: SIZES.xSmall,
