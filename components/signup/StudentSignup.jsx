@@ -5,12 +5,17 @@ import FormInputWithLabel from "../common/input/FormInputWithLabel";
 import FormPickerInput from "../common/input/FormPickerInput";
 import AccentButton from "../common/btns/AccentButton";
 import { COLORS, SIZES, FONT } from "../../constants/theme";
+import { set } from "react-native-reanimated";
 
-const StudentSignup = ({ formState, setFormState, onSubmit }) => {
-    const handleFormChange = (key, value) => {
-        setFormState({ ...formState, [key]: value });
-    };
-
+const StudentSignup = ({
+    formState,
+    setFieldValue,
+    onSubmit,
+    handleChange,
+    handleBlur,
+    errors,
+    touched,
+}) => {
     return (
         <View style={{ marginBottom: SIZES.xxLarge * 2 }}>
             <View
@@ -144,12 +149,9 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                             paddingVertical: SIZES.xSmall / 2,
                         }}
                         onSubmit={() => {
-                            setFormState({
-                                ...formState,
-                                email: "",
-                                password: "",
-                                reEnterPassword: "",
-                            });
+                            setFieldValue("email", "");
+                            setFieldValue("password", "");
+                            setFieldValue("confirmPassword", "");
                         }}
                     />
                 </View>
@@ -158,7 +160,10 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     <FormInputWithLabel
                         label="Email"
                         value={formState.email}
-                        setValue={(value) => handleFormChange("email", value)}
+                        handleChange={handleChange("email")}
+                        handleBlur={handleBlur("email")}
+                        error={errors.email}
+                        touched={touched.email}
                         inputOptions={{
                             inputMode: "email",
                             autoComplete: "email",
@@ -168,9 +173,10 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     <FormInputWithLabel
                         label="Password"
                         value={formState.password}
-                        setValue={(value) =>
-                            handleFormChange("password", value)
-                        }
+                        handleChange={handleChange("password")}
+                        handleBlur={handleBlur("password")}
+                        error={errors.password}
+                        touched={touched.password}
                         inputOptions={{
                             autoComplete: "new-password",
                             secureTextEntry: true,
@@ -179,10 +185,11 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     />
                     <FormInputWithLabel
                         label="Re-Enter Password"
-                        value={formState.reEnterPassword}
-                        setValue={(value) =>
-                            handleFormChange("reEnterPassword", value)
-                        }
+                        value={formState.confirmPassword}
+                        handleChange={handleChange("confirmPassword")}
+                        handleBlur={handleBlur("confirmPassword")}
+                        error={errors.confirmPassword}
+                        touched={touched.confirmPassword}
                         inputOptions={{
                             autoComplete: "new-password",
                             secureTextEntry: true,
@@ -236,12 +243,9 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                             paddingVertical: SIZES.xSmall / 2,
                         }}
                         onSubmit={() => {
-                            setFormState({
-                                ...formState,
-                                firstName: "",
-                                lastName: "",
-                                mobile: "",
-                            });
+                            setFieldValue("firstName", "");
+                            setFieldValue("lastName", "");
+                            setFieldValue("mobile", "");
                         }}
                     />
                 </View>
@@ -250,9 +254,10 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     <FormInputWithLabel
                         label="First Name"
                         value={formState.firstName}
-                        setValue={(value) =>
-                            handleFormChange("firstName", value)
-                        }
+                        handleChange={handleChange("firstName")}
+                        handleBlur={handleBlur("firstName")}
+                        error={errors.firstName}
+                        touched={touched.firstName}
                         inputOptions={{
                             autoComplete: "given-name",
                         }}
@@ -260,9 +265,10 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     <FormInputWithLabel
                         label="Last Name"
                         value={formState.lastName}
-                        setValue={(value) =>
-                            handleFormChange("lastName", value)
-                        }
+                        handleChange={handleChange("lastName")}
+                        handleBlur={handleBlur("lastName")}
+                        error={errors.lastName}
+                        touched={touched.lastName}
                         inputOptions={{
                             autoComplete: "family-name",
                         }}
@@ -271,7 +277,10 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     <FormInputWithLabel
                         label="Mobile"
                         value={formState.mobile}
-                        setValue={(value) => handleFormChange("mobile", value)}
+                        handleChange={handleChange("mobile")}
+                        handleBlur={handleBlur("mobile")}
+                        error={errors.mobile}
+                        touched={touched.mobile}
                         inputOptions={{
                             autoComplete: "tel",
                             inputMode: "tel",
@@ -324,14 +333,11 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                             paddingVertical: SIZES.xSmall / 2,
                         }}
                         onSubmit={() => {
-                            setFormState({
-                                ...formState,
-                                street: "",
-                                city: "",
-                                stateOrProvince: "",
-                                zipOrPostalCode: "",
-                                country: "",
-                            });
+                            setFieldValue("street", "");
+                            setFieldValue("city", "");
+                            setFieldValue("stateOrProvince", "");
+                            setFieldValue("zipOrPostalCode", "");
+                            setFieldValue("country", "");
                         }}
                     />
                 </View>
@@ -340,7 +346,10 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     <FormInputWithLabel
                         label="Street"
                         value={formState.street}
-                        setValue={(value) => handleFormChange("street", value)}
+                        handleChange={handleChange("street")}
+                        handleBlur={handleBlur("street")}
+                        error={errors.street}
+                        touched={touched.street}
                         inputOptions={{
                             autoComplete: "street-address",
                         }}
@@ -348,7 +357,10 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     <FormInputWithLabel
                         label="City"
                         value={formState.city}
-                        setValue={(value) => handleFormChange("city", value)}
+                        handleChange={handleChange("city")}
+                        handleBlur={handleBlur("city")}
+                        error={errors.city}
+                        touched={touched.city}
                         inputOptions={{
                             autoComplete: "address-line2",
                         }}
@@ -356,9 +368,10 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     <FormInputWithLabel
                         label="State/Province"
                         value={formState.stateOrProvince}
-                        setValue={(value) =>
-                            handleFormChange("stateOrProvince", value)
-                        }
+                        handleChange={handleChange("stateOrProvince")}
+                        handleBlur={handleBlur("stateOrProvince")}
+                        error={errors.stateOrProvince}
+                        touched={touched.stateOrProvince}
                         inputOptions={{
                             autoComplete: "address-line2",
                         }}
@@ -366,9 +379,10 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     <FormInputWithLabel
                         label="Zip/Postal Code"
                         value={formState.zipOrPostalCode}
-                        setValue={(value) =>
-                            handleFormChange("zipOrPostalCode", value)
-                        }
+                        handleChange={handleChange("zipOrPostalCode")}
+                        handleBlur={handleBlur("zipOrPostalCode")}
+                        error={errors.zipOrPostalCode}
+                        touched={touched.zipOrPostalCode}
                         inputOptions={{
                             autoComplete: "postal-code",
                             inputMode: "numeric",
@@ -377,7 +391,10 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                     <FormInputWithLabel
                         label="Country"
                         value={formState.country}
-                        setValue={(value) => handleFormChange("country", value)}
+                        handleChange={handleChange("country")}
+                        handleBlur={handleBlur("country")}
+                        error={errors.country}
+                        touched={touched.country}
                         inputOptions={{
                             autoComplete: "country",
                         }}
@@ -429,11 +446,13 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                             paddingVertical: SIZES.xSmall / 2,
                         }}
                         onSubmit={() => {
-                            setFormState({
-                                ...formState,
-                                currentJobTitle: "",
-                                skillSet: "",
-                            });
+                            // setFormState({
+                            //     ...formState,
+                            //     currentJobTitle: "",
+                            //     skillSet: "",
+                            // });
+                            setFieldValue("currentJobTitle", "");
+                            setFieldValue("skillSet", "");
                         }}
                     />
                 </View>
@@ -448,17 +467,19 @@ const StudentSignup = ({ formState, setFormState, onSubmit }) => {
                             "Project Manager",
                         ]}
                         value={formState.currentJobTitle}
-                        setValue={(value) => {
-                            handleFormChange("currentJobTitle", value);
-                        }}
+                        handleChange={handleChange("currentJobTitle")}
+                        handleBlur={handleBlur("currentJobTitle")}
+                        error={errors.currentJobTitle}
+                        touched={touched.currentJobTitle}
                     />
 
                     <FormInputWithLabel
                         label="Skill Set"
                         value={formState.skillSet}
-                        setValue={(value) =>
-                            handleFormChange("skillSet", value)
-                        }
+                        handleChange={handleChange("skillSet")}
+                        handleBlur={handleBlur("skillSet")}
+                        error={errors.skillSet}
+                        touched={touched.skillSet}
                         inputWidth="90%"
                         inputOptions={{
                             multiLine: true,

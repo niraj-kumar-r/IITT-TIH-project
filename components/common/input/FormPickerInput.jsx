@@ -8,7 +8,10 @@ const FormPickerInput = ({
     label,
     optionsList,
     value,
-    setValue,
+    handleChange,
+    handleBlur,
+    errors,
+    touched,
     showAsterisk = false,
     inputWidth,
 }) => {
@@ -36,7 +39,8 @@ const FormPickerInput = ({
             >
                 <Picker
                     selectedValue={value}
-                    onValueChange={(itemValue) => setValue(itemValue)}
+                    onValueChange={handleChange}
+                    onBlur={handleBlur}
                     prompt={label}
                 >
                     {optionsList?.map((area, index) => (
