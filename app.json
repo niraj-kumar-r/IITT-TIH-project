@@ -13,6 +13,14 @@
     },
     "android": {
       "package": "com.hereticinquisitor.IITTNIFtest"
-    }
+    },
+    "plugins": [
+      [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "Production"
+        }
+      ]
+    ]
   }
 }
