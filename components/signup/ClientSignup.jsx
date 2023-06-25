@@ -6,32 +6,17 @@ import FormPickerInput from "../common/input/FormPickerInput";
 import AccentButton from "../common/btns/AccentButton";
 import { COLORS, SIZES, FONT } from "../../constants/theme";
 
-const ClientSignup = ({ formState, setFormState, onSubmit }) => {
-    const handleFormChange = (key, value) => {
-        setFormState({ ...formState, [key]: value });
-    };
-
-    const coreAreaList = [
-        "Quantum Technologies",
-        "Geospatial Tools",
-        "Data Science",
-        "Radio Frequency",
-        "Image Processing",
-        "Indoor Mapping",
-        "Robotics",
-        "Defence",
-    ];
-
-    const appliedAreaList = [
-        "Precision Agriculture",
-        "Disaster Management",
-        "Smart Cities",
-        "Smart Villages",
-        "Land Records and Insurance",
-        "Navigation",
-        "Policy and Legal",
-    ];
-
+const ClientSignup = ({
+    formState,
+    setFieldValue,
+    onSubmit,
+    handleChange,
+    handleBlur,
+    errors,
+    touched,
+    coreAreaList,
+    appliedAreaList,
+}) => {
     return (
         <View style={{ marginBottom: SIZES.xxLarge * 2 }}>
             <View
@@ -59,7 +44,10 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                 <FormInputWithLabel
                     label="Company Name"
                     value={formState?.companyName}
-                    setValue={(value) => handleFormChange("companyName", value)}
+                    handleChange={handleChange("companyName")}
+                    handleBlur={handleBlur("companyName")}
+                    error={errors.companyName}
+                    touched={touched.companyName}
                     inputWidth="90%"
                     showAsterisk={true}
                     inputOptions={{
@@ -69,9 +57,10 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                 <FormInputWithLabel
                     label="Contact Person Name"
                     value={formState?.contactPersonName}
-                    setValue={(value) =>
-                        handleFormChange("contactPersonName", value)
-                    }
+                    handleChange={handleChange("contactPersonName")}
+                    handleBlur={handleBlur("contactPersonName")}
+                    error={errors.contactPersonName}
+                    touched={touched.contactPersonName}
                     inputWidth="90%"
                     showAsterisk={true}
                     inputOptions={{ inputMode: "text", autocomplete: "name" }}
@@ -79,7 +68,10 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                 <FormInputWithLabel
                     label="Designation"
                     value={formState?.designation}
-                    setValue={(value) => handleFormChange("designation", value)}
+                    handleChange={handleChange("designation")}
+                    handleBlur={handleBlur("designation")}
+                    error={errors.designation}
+                    touched={touched.designation}
                     inputWidth="90%"
                     showAsterisk={true}
                     inputOptions={{ inputMode: "text" }}
@@ -87,7 +79,10 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                 <FormInputWithLabel
                     label="Email"
                     value={formState?.email}
-                    setValue={(value) => handleFormChange("email", value)}
+                    handleChange={handleChange("email")}
+                    handleBlur={handleBlur("email")}
+                    error={errors.email}
+                    touched={touched.email}
                     inputWidth="90%"
                     showAsterisk={true}
                     inputOptions={{ inputMode: "email", autocomplete: "email" }}
@@ -95,7 +90,10 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                 <FormInputWithLabel
                     label="Contact"
                     value={formState?.contact}
-                    setValue={(value) => handleFormChange("contact", value)}
+                    handleChange={handleChange("contact")}
+                    handleBlur={handleBlur("contact")}
+                    error={errors.contact}
+                    touched={touched.contact}
                     inputWidth="90%"
                     showAsterisk={true}
                     inputOptions={{ inputMode: "tel", autocomplete: "tel" }}
@@ -103,7 +101,10 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                 <FormInputWithLabel
                     label="Website"
                     value={formState?.website}
-                    setValue={(value) => handleFormChange("website", value)}
+                    handleChange={handleChange("website")}
+                    handleBlur={handleBlur("website")}
+                    error={errors.website}
+                    touched={touched.website}
                     inputWidth="90%"
                     showAsterisk={true}
                     inputOptions={{ inputMode: "url" }}
@@ -136,14 +137,20 @@ const ClientSignup = ({ formState, setFormState, onSubmit }) => {
                     label="Core Area"
                     optionsList={coreAreaList}
                     value={formState?.coreArea}
-                    setValue={(value) => handleFormChange("coreArea", value)}
+                    handleChange={handleChange("coreArea")}
+                    handleBlur={handleBlur("coreArea")}
+                    error={errors.coreArea}
+                    touched={touched.coreArea}
                     showAsterisk={true}
                 />
                 <FormPickerInput
                     label="Applied Area"
                     optionsList={appliedAreaList}
                     value={formState?.appliedArea}
-                    setValue={(value) => handleFormChange("appliedArea", value)}
+                    handleChange={handleChange("appliedArea")}
+                    handleBlur={handleBlur("appliedArea")}
+                    error={errors.appliedArea}
+                    touched={touched.appliedArea}
                     showAsterisk={true}
                 />
             </View>

@@ -1,5 +1,5 @@
 import { ScrollView } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import StudentSignup from "../../components/signup/StudentSignup";
@@ -17,16 +17,16 @@ const Signup = () => {
         confirmPassword: Yup.string()
             .oneOf([Yup.ref("password"), null], "Passwords must match")
             .required("Confirm Password is required"),
-        firstName: Yup.string().required("First Name is required"),
+        firstName: Yup.string(),
         lastName: Yup.string().required("Last Name is required"),
-        mobile: Yup.string().required("Mobile is required"),
-        street: Yup.string().required("Street is required"),
-        city: Yup.string().required("City is required"),
-        stateOrProvince: Yup.string().required("State/Province is required"),
-        zipOrPostalCode: Yup.string().required("ZIP/Postal Code is required"),
-        country: Yup.string().required("Country is required"),
-        currentJobTitle: Yup.string().required("Current Job Title is required"),
-        skillSet: Yup.string().required("Skill Set is required"),
+        mobile: Yup.string(),
+        street: Yup.string(),
+        city: Yup.string(),
+        stateOrProvince: Yup.string(),
+        zipOrPostalCode: Yup.string(),
+        country: Yup.string(),
+        currentJobTitle: Yup.string(),
+        skillSet: Yup.string(),
     });
 
     const {
@@ -56,7 +56,7 @@ const Signup = () => {
             skillSet: "",
         },
         onSubmit: (values) => {
-            alert(values);
+            alert(JSON.stringify(values, null, 2));
             resetForm();
         },
     });
